@@ -1,0 +1,80 @@
+{
+  "initial_message": "190 ℃で使える製品はどれだろう？",
+  "final_message": {
+    "role": "assistant",
+    "content": "190℃で使用可能な製品は、「製品D」です。  \n- **最大温度耐性**: 200.0℃（190℃は安全範囲内）  \n- **密度**: 1.5  \n- **適用用途**: 化学プラント  \n\n他の製品の温度耐性が190℃を下回るため、製品Dが唯一の選択肢です。",
+    "thinking": "Okay, the user asked which products can be used at 190 ℃. I need to check the function response. The tool returned product D with a max temperature of 200.0, which is higher than 190. So product D is suitable. The density is 1.5 and application is chemical plant. I should confirm that 190 is within the max temp limit. Since 190 < 200, it's acceptable. The answer should list product D as the valid option.\n",
+    "images": null,
+    "tool_name": null,
+    "tool_calls": null
+  },
+  "durations_sec": [
+    4.676658793,
+    4.960015247
+  ],
+  "total_durations_sec": 9.636674039999999,
+  "responses": [
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-08-23T13:18:51.845130211Z",
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 4676658793,
+      "load_duration": 133763279,
+      "prompt_eval_count": 159,
+      "prompt_eval_duration": 304832000,
+      "eval_count": 185,
+      "eval_duration": 4107084000,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "thinking": "Okay, the user is asking which products can be used at 190 ℃. Let me check the tools provided. There's a function called search_products that takes parameters like application, db_path, density, and max_temperature. The relevant parameter here is max_temperature, which should be set to 190. The other parameters like application and density aren't specified in the query, so maybe they can be left as default or nil. The db_path is part of the function's parameters, but since the user didn't mention anything about the database path, perhaps the function doesn't require it, or it's handled internally. So, I need to call search_products with max_temperature set to 190. Let me structure the JSON for the tool call accordingly.\n",
+        "images": null,
+        "tool_name": null,
+        "tool_calls": [
+          {
+            "function": {
+              "name": "search_products",
+              "arguments": {
+                "max_temperature": 190
+              }
+            }
+          }
+        ]
+      },
+      "logprobs": null
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-08-23T13:18:56.815178802Z",
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 4960015247,
+      "load_duration": 119099006,
+      "prompt_eval_count": 210,
+      "prompt_eval_duration": 23802000,
+      "eval_count": 212,
+      "eval_duration": 4748296000,
+      "message": {
+        "role": "assistant",
+        "content": "190℃で使用可能な製品は、「製品D」です。  \n- **最大温度耐性**: 200.0℃（190℃は安全範囲内）  \n- **密度**: 1.5  \n- **適用用途**: 化学プラント  \n\n他の製品の温度耐性が190℃を下回るため、製品Dが唯一の選択肢です。",
+        "thinking": "Okay, the user asked which products can be used at 190 ℃. I need to check the function response. The tool returned product D with a max temperature of 200.0, which is higher than 190. So product D is suitable. The density is 1.5 and application is chemical plant. I should confirm that 190 is within the max temp limit. Since 190 < 200, it's acceptable. The answer should list product D as the valid option.\n",
+        "images": null,
+        "tool_name": null,
+        "tool_calls": null
+      },
+      "logprobs": null
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "190 ℃で使える製品はどれだろう？"
+    },
+    {
+      "role": "tool",
+      "tool_name": "search_products",
+      "content": "[{'id': 4, 'name': '製品D', 'max_temperature': 200.0, 'density': 1.5, 'application': '化学プラント'}]"
+    }
+  ]
+}
