@@ -1,2 +1,3 @@
 $env:OLLAMA_HOST="0.0.0.0:11434"
+$env:OLLAMA_KEEP_ALIVE=-1
 ollama serve
